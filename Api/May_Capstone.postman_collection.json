@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "e782c0bb-1c31-438f-9629-5c5f14136f87",
+		"name": "May_Capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45026234",
+		"_collection_link": "https://kiruthikag-5283446.postman.co/workspace/a158bfb8-c99d-4576-81b2-2b52f0fe3ad0/collection/45026234-e782c0bb-1c31-438f-9629-5c5f14136f87?action=share&source=collection_link&creator=45026234"
+	},
+	"item": [
+		{
+			"name": "Get_users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1. Status Code\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// 2. Response Time\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+							"});\r",
+							"\r",
+							"// 3. Response Body\r",
+							"pm.test(\"Check response body for specific content\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"George\");\r",
+							"});\r",
+							"\r",
+							"// 4. Response Header\r",
+							"pm.test(\"Content-Type is application/json\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_singleUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"User ID is 2\", function () {\r",
+							"    pm.expect(res.data.id).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Email is correct\", function () {\r",
+							"    pm.expect(res.data.email).to.eql(\"janet.weaver@reqres.in\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Response body contains correct name and job\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res.name).to.eql(\"Kiruthika\");\r",
+							"    pm.expect(res.job).to.eql(\"Associate Engineer\");\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Response time is less than 4000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Content-Type header is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Content-Type is application/json\", function () {\r",
+							"    const contentType = pm.response.headers.get(\"Content-Type\");\r",
+							"    pm.expect(contentType).to.include(\"application/json\");\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Response contains id and createdAt\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res).to.have.property(\"id\");\r",
+							"    pm.expect(res).to.have.property(\"createdAt\");\r",
+							"});\r",
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "reqres-free-v1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kiruthika\",\r\n    \"job\" : \"Associate Engineer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Response body contains correct name and job\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res.name).to.eql(\"Kiruthika\");\r",
+							"    pm.expect(res.job).to.eql(\"Ascendion\");\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Response time is less than 4000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Content-Type header is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Content-Type is application/json\", function () {\r",
+							"    const contentType = pm.response.headers.get(\"Content-Type\");\r",
+							"    pm.expect(contentType).to.include(\"application/json\");\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Response contains id and createdAt\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    //pm.expect(res).to.have.property(\"id\");\r",
+							"    pm.expect(res).to.have.property(\"updatedAt\");\r",
+							"});\r",
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "reqres-free-v1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kiruthika\",\r\n    \"job\" : \"Ascendion\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/979",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"979"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Response body contains correct job\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    //pm.expect(res.name).to.eql(\"Kiruthika\");\r",
+							"    pm.expect(res.job).to.eql(\"Associate Engineer\");\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Response time is less than 4000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Content-Type header is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Content-Type is application/json\", function () {\r",
+							"    const contentType = pm.response.headers.get(\"Content-Type\");\r",
+							"    pm.expect(contentType).to.include(\"application/json\");\r",
+							"});\r",
+							" \r",
+							"pm.test(\"Response contains id and createdAt\", function () {\r",
+							"    const res = pm.response.json();\r",
+							"    //pm.expect(res).to.have.property(\"id\");\r",
+							"    pm.expect(res).to.have.property(\"updatedAt\");\r",
+							"});\r",
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "reqres-free-v1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"job\" : \"Associate Engineer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/979",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"979"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 4000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+							"});\r",
+							" \r",
+							"\r",
+							" \r",
+							"\r",
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "reqres-free-v1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://reqres.in/api/users/979",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"979"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
