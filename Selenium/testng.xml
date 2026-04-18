@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Login Suite" verbose="1" parallel="false">
+
+	 <listeners>
+		<listener class-name="util.TestListener"/>
+		<listener class-name="util.ExtentTestListener"/>
+	</listeners>
+	
+    <test name=" Test">
+        <classes>
+            <class name="selenium_java_pomTest.POM_Test"/>
+            
+        </classes>
+    </test>
+    
+   
+</suite>

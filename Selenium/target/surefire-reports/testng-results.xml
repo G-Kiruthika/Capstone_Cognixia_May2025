@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-05-24T17:26:06 IST" name="Login Suite" finished-at="2025-05-24T17:29:10 IST" duration-ms="183819">
+    <groups>
+    </groups>
+    <test started-at="2025-05-24T17:26:06 IST" name=" Test" finished-at="2025-05-24T17:29:10 IST" duration-ms="183819">
+      <class name="selenium_java_pomTest.POM_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:26:06 IST" name="setup" finished-at="2025-05-24T17:26:11 IST" duration-ms="5096" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginInvalidEmail()[pri:1, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:26:11 IST" name="loginInvalidEmail" finished-at="2025-05-24T17:26:14 IST" duration-ms="2550" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginInvalidEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:26:14 IST" name="tearDown" finished-at="2025-05-24T17:26:17 IST" duration-ms="3196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:26:17 IST" name="setup" finished-at="2025-05-24T17:26:22 IST" duration-ms="4665" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginInvalidPassword()[pri:2, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:26:22 IST" name="loginInvalidPassword" finished-at="2025-05-24T17:26:27 IST" duration-ms="4937" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginInvalidPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:26:27 IST" name="tearDown" finished-at="2025-05-24T17:26:30 IST" duration-ms="3493" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:26:30 IST" name="setup" finished-at="2025-05-24T17:26:34 IST" duration-ms="4132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginToAccountPositive()[pri:3, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:26:34 IST" name="loginToAccountPositive" finished-at="2025-05-24T17:26:41 IST" duration-ms="6019" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToAccountPositive -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:26:41 IST" name="tearDown" finished-at="2025-05-24T17:26:44 IST" duration-ms="3966" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:26:44 IST" name="setup" finished-at="2025-05-24T17:26:50 IST" duration-ms="5048" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="runSearchesFromExcel()[pri:4, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:26:50 IST" name="runSearchesFromExcel" finished-at="2025-05-24T17:27:23 IST" duration-ms="33138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runSearchesFromExcel -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:27:23 IST" name="tearDown" finished-at="2025-05-24T17:27:29 IST" duration-ms="6287" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:27:29 IST" name="setup" finished-at="2025-05-24T17:27:34 IST" duration-ms="4816" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="addToWish()[pri:5, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:27:34 IST" name="addToWish" finished-at="2025-05-24T17:28:26 IST" duration-ms="52726" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToWish -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:28:26 IST" name="tearDown" finished-at="2025-05-24T17:28:35 IST" duration-ms="8631" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:28:35 IST" name="setup" finished-at="2025-05-24T17:28:41 IST" duration-ms="5841" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="filterFunction()[pri:6, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:28:41 IST" name="filterFunction" finished-at="2025-05-24T17:29:03 IST" duration-ms="22231" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filterFunction -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:selenium_java_pomTest.POM_Test@798162bc]" started-at="2025-05-24T17:29:03 IST" name="tearDown" finished-at="2025-05-24T17:29:10 IST" duration-ms="7001" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- selenium_java_pomTest.POM_Test -->
+    </test> <!--  Test -->
+  </suite> <!-- Login Suite -->
+</testng-results>
